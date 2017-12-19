@@ -1,0 +1,364 @@
+<html>
+
+<head>
+	
+	<title>List</title>	 
+	
+	<meta charset="utf-8">
+  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<script type="text/javascript" src="jquery-download.min.js"></script>
+	
+	<script src="jquery-ui/jquery-ui/jquery-ui.js"></script>
+	
+	<style type="text/css">
+	
+		@media(min-width:800px){
+		ol{
+			-moz-column-count: 3;
+			-moz-column-gap: 10px;
+			-webkit-column-count: 3;
+			-webkit-column-gap: 10px;
+			column-count: 3;
+			column-gap: 10px;
+			list-style-position: inside;
+		 }
+		 }
+		
+		.invisible{
+			display:none;
+		}
+		
+		.players{
+			font-size:15px;
+			cursor:move;
+			max-width:220px;
+		}
+		
+		.tiers{
+			margin-left:10px;
+		}
+		
+		.drafted{
+			display:inline-block;
+		}
+		
+		input[type='checkbox'] {
+			appearance:none;
+			vertical-align:middle;
+			cursor: pointer;
+		}
+	
+		.position{
+			color:grey;
+		}
+		
+		
+	</style>
+	
+</head>	 
+	   
+<body>
+
+	<ul>
+		<li>Click and drag names to drop them where you want.</li>
+		<li>Click on the box to indicate a player has been drafted.</li>
+		<li>Use the drop down next to player names to select a tier.</li>
+		<li>Turn tiers off or on by using the button</li>
+	</ul>
+
+	<button class="tier-button">Turn Tiers Off/On</button>
+
+	<div class="invisible">
+		<select class="tiers">
+			<option class="tier-numbers" value="0">0</option>
+			<option class="tier-numbers" value="1">1</option>
+			<option class="tier-numbers" value="2">2</option>
+			<option class="tier-numbers" value="3">3</option>
+			<option class="tier-numbers" value="4">4</option>
+			<option class="tier-numbers" value="5">5</option>
+			<option class="tier-numbers" value="6">6</option>
+			<option class="tier-numbers" value="7">7</option>
+			<option class="tier-numbers" value="8">8</option>
+			<option class="tier-numbers" value="9">9</option>
+			<option class="tier-numbers" value="10">10</option>
+			<option class="tier-numbers" value="11">11</option>
+			<option class="tier-numbers" value="12">12</option>
+			<option class="tier-numbers" value="13">13</option>
+			<option class="tier-numbers" value="14">14</option>
+			<option class="tier-numbers" value="15">15</option>
+			<option class="tier-numbers" value="16">16</option>
+			<option class="tier-numbers" value="17">17</option>
+			<option class="tier-numbers" value="18">18</option>
+			<option class="tier-numbers" value="19">19</option>
+			<option class="tier-numbers" value="20">20</option>
+		</select>
+	</div>
+ 
+	<div class="invisible">
+	<div class="drafted">
+		<input type="checkbox">
+	</div>
+	</div>
+
+	<ol id="sortable">
+		<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+		<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+				<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+				<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+				<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+				<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+				<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+				<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+				<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+				<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+				<li class="players"><span class="position">(RB)</span> David Johnson</li>
+		<li class="players"><span class="position">(RB)</span> Ezekial Elliot</li>
+		<li class="players"><span class="position">(RB)</span> Le'Veon Bell</li>
+		<li class="players"><span class="position">(WR)</span> Antonio Brown</li>
+		<li class="players"><span class="position">(WR)</span> Odell Beckham Jr.</li>
+		<li class="players"><span class="position">(WR)</span> Julio Jones</li>
+		<li class="players"><span class="position">(WR)</span> Mike Evans</li>
+		<li class="players"><span class="position">(RB)</span> LeSean McCoy</li>
+		<li class="players"><span class="position">(RB)</span> Jordan Howard</li>
+		<li class="players"><span class="position">(RB)</span> Melvin Gordon</li>
+		<li class="players"><span class="position">(RB)</span> DeMarco Murray</li>
+		<li class="players"><span class="position">(RB)</span> Jay Ajayi</li>
+		<li class="players"><span class="position">(WR)</span> A.J. Green</li>
+		<li class="players"><span class="position">(RB)</span> Devonta Freeman</li>
+		<li class="players"><span class="position">(WR)</span> Jordy Nelson</li>
+		<li class="players"><span class="position">(WR)</span> Dez Bryant</li>
+		<li class="players"><span class="position">(RB)</span> Todd Gurley</li>
+		<li class="players"><span class="position">(TE)</span> Rob Gronkowski</li>
+		<li class="players"><span class="position">(WR)</span> T.Y. Hilton</li>
+		<li class="players"><span class="position">(WR)</span> Michael Thomas</li>
+		<li class="players"><span class="position">(RB)</span> Carlos Hyde</li>
+	</ol>
+	
+	<script type="text/javascript">
+		
+		
+		
+		$(document).ready(function(){
+			$(".tier-button").click(function(){
+				$("select").toggle();
+			});
+		});	
+					
+		$( function() {
+			$( "#sortable" ).sortable();
+				$( "#sortable" ).disableSelection();
+		});
+  
+		$( ".tiers" ).clone().appendTo( ".players" );
+		
+		$( ".drafted" ).clone().appendTo( ".players" );
+		
+		
+		
+	</script>
+	
+</body>
+
+</html> 
